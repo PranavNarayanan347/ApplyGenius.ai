@@ -1,0 +1,32 @@
+<!-- add_job.html -->
+{% extends 'base.html' %}
+{% block title %}Add a Job{% endblock %}
+{% block content %}
+<h2 class="text-2xl font-bold mb-6 text-orange-600">📋 Add a Job to Your Tracker</h2>
+
+<form method="POST" action="/add-job" class="bg-white p-6 rounded-lg shadow-md space-y-6">
+    <div>
+        <label class="block mb-1 font-medium">Job URL:</label>
+        <input type="url" name="url" required class="w-full border border-gray-300 rounded px-4 py-2">
+    </div>
+
+    <div>
+        <label class="block mb-1 font-medium">Application Status:</label>
+        <select name="status" class="w-full border border-gray-300 rounded px-4 py-2">
+            <option value="Interested">Interested</option>
+            <option value="Applied">Applied</option>
+            <option value="Interview">Interview</option>
+            <option value="Offer">Offer</option>
+            <option value="Rejected">Rejected</option>
+        </select>
+    </div>
+
+    <div>
+        <label class="block mb-1 font-medium">Notes:</label>
+        <textarea name="notes" rows="4" class="w-full border border-gray-300 rounded px-4 py-2" placeholder="Any thoughts, reminders, or details..."></textarea>
+    </div>
+
+    <button type="submit" class="bg-orange-500 text-white px-6 py-2 rounded hover:bg-orange-600">Add to Tracker ✅</button>
+</form>
+{% endblock %}
+

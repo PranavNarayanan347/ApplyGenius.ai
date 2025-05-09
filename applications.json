@@ -1,0 +1,46 @@
+[
+    {
+        "url": "https://www.python.org/jobs/7853/",
+        "title": "",
+        "company": "",
+        "location": "",
+        "status": "Applied",
+        "resume_file": "",
+        "cover_letter_file": "",
+        "applied_date": "",
+        "notes": "Cool Job"
+    },
+    {
+        "url": "https://www.python.org/jobs/7853/",
+        "title": "",
+        "company": "",
+        "location": "",
+        "status": "Interested",
+        "resume_file": "",
+        "cover_letter_file": "",
+        "applied_date": "",
+        "notes": "cool"
+    },
+    {
+        "url": "https://www.python.org/jobs/7853/",
+        "title": "",
+        "company": "",
+        "location": "",
+        "status": "Interested",
+        "resume_file": "",
+        "cover_letter_file": "",
+        "applied_date": "",
+        "notes": "sick"
+    },
+    {
+        "url": "https://www.python.org/jobs/7853/",
+        "title": "Backend Python Developer (Django/DRF)",
+        "company": "Paytree",
+        "location": "",
+        "status": "Interested",
+        "resume_file": "",
+        "cover_letter_file": "",
+        "applied_date": "2025-05-05",
+        "notes": "cool"
+    }
+]

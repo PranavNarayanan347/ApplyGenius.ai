@@ -1,0 +1,68 @@
+<!-- tracker.html -->
+{% extends 'base.html' %}
+{% block title %}Application Tracker{% endblock %}
+{% block content %}
+<h2 class="text-2xl font-bold mb-6 text-orange-600">Your Job Application Tracker</h2>
+
+{% if applications %}
+<div class="overflow-x-auto">
+  <table class="min-w-full bg-white shadow-md rounded-lg">
+    <thead>
+      <tr class="bg-orange-100 text-left text-sm font-medium text-gray-700">
+        <th class="p-3">Job Title</th>
+        <th class="p-3">Company</th>
+        <th class="p-3">Location</th>
+        <th class="p-3">Status</th>
+        <th class="p-3">Applied Date</th>
+        <th class="p-3">Notes</th>
+        <th class="p-3">Link</th>
+        <th class="p-3">Update</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for app in applications %}
+      <tr class="border-t">
+        <td class="p-3">{{ app.title or 'N/A' }}</td>
+        <td class="p-3">{{ app.company or 'N/A' }}</td>
+        <td class="p-3">{{ app.location or 'N/A' }}</td>
+        <td class="p-3">
+          <span class="inline-block px-2 py-1 text-xs font-semibold rounded-full
+            {% if app.status == 'Interested' %} bg-orange-100 text-orange-800
+            {% elif app.status == 'Applied' %} bg-blue-100 text-blue-800
+            {% elif app.status == 'Interview' %} bg-purple-100 text-purple-800
+            {% elif app.status == 'Offer' %} bg-green-100 text-green-800
+            {% elif app.status == 'Rejected' %} bg-red-100 text-red-800
+            {% else %} bg-gray-100 text-gray-800
+            {% endif %}">
+            {{ app.status }}
+          </span>
+        </td>
+        <td class="p-3">{{ app.applied_date or 'N/A' }}</td>
+        <td class="p-3">{{ app.notes }}</td>
+        <td class="p-3">
+          <a href="{{ app.url }}" class="text-blue-600 hover:underline" target="_blank">🔗 View</a>
+        </td>
+        <td class="p-3">
+          <form action="/update-status" method="POST" class="flex gap-2">
+            <input type="hidden" name="url" value="{{ app.url }}">
+            <select name="new_status" class="rounded border-gray-300 text-sm px-2 py-1">
+              {% for status in ["Interested", "Applied", "Interview", "Offer", "Rejected"] %}
+              <option value="{{ status }}" {% if app.status == status %}selected{% endif %}>{{ status }}</option>
+              {% endfor %}
+            </select>
+            <button type="submit" class="bg-orange-500 text-white px-3 py-1 text-sm rounded hover:bg-orange-600 transition">Update</button>
+          </form>
+        </td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+</div>
+{% else %}
+<p class="text-gray-600">No applications tracked yet.</p>
+{% endif %}
+
+<div class="mt-6">
+  <a href="/add-job" class="inline-block text-orange-700 hover:underline">➕ Add New Job</a>
+</div>
+{% endblock %}

@@ -1,0 +1,29 @@
+<!-- landing.html -->
+{% extends 'base.html' %}
+{% block title %}Welcome to ApplyGenius{% endblock %}
+{% block content %}
+<div class="text-center py-20 px-6 bg-white rounded-lg shadow-md">
+  <h1 class="text-4xl font-extrabold text-orange-600 mb-4">Welcome to ApplyGenius</h1>
+  <p class="text-gray-700 text-lg max-w-xl mx-auto mb-6">
+    Your smart job application assistant — track, tailor, and apply with confidence.
+  </p>
+  <a href="/upload" class="inline-block bg-orange-500 text-white px-6 py-3 rounded text-lg font-semibold hover:bg-orange-600 transition">
+    🚀 Get Started
+  </a>
+</div>
+
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6 mt-16">
+  <div class="bg-orange-50 p-6 rounded-lg shadow-sm">
+    <h2 class="text-xl font-bold text-orange-600 mb-2">📄 Resume Optimizer</h2>
+    <p class="text-gray-700">Tailor your resume with AI to match each job description — instantly.</p>
+  </div>
+  <div class="bg-orange-50 p-6 rounded-lg shadow-sm">
+    <h2 class="text-xl font-bold text-orange-600 mb-2">📬 Application Tracker</h2>
+    <p class="text-gray-700">Keep tabs on your job search — from interest to offer — all in one place.</p>
+  </div>
+  <div class="bg-orange-50 p-6 rounded-lg shadow-sm">
+    <h2 class="text-xl font-bold text-orange-600 mb-2">💡 Job Suggestions</h2>
+    <p class="text-gray-700">Get smart, AI-curated job listings based on your application history.</p>
+  </div>
+</div>
+{% endblock %}
