@@ -32,3 +32,11 @@ Built to solve a common pain point: job seekers spending countless hours tailori
    ```bash
    git clone https://github.com/pranavnarayanan347/ApplyGenius.ai.git
    cd ApplyGenius.ai
+2. python -m venv venv
+source venv/bin/activate  # or venv\Scripts\activate on Windows
+
+3. pip install -r requirements.txt
+
+4. OPENAI_API_KEY=your_openai_key_here
+
+5. flask run
